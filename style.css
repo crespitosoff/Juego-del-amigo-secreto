@@ -134,6 +134,15 @@ ul {
     margin: 20px 0;
 }
 
+li {
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    /* borde para separar por identacion */
+    border: 1px solid var(--color-tertiary);
+}
+
 .result-list {
     margin-top: 15px;
     color: #05DF05;
