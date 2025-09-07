@@ -34,3 +34,9 @@ function sortearAmigo() {
         document.getElementById("resultado").textContent = "No hay amigos para sortear.";
     }
 }
+
+function reiniciar() {
+    amigos = [];
+    actualizarLista();
+    document.getElementById("resultado").textContent = "";
+}
