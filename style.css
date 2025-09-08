@@ -70,6 +70,13 @@ body {
     text-align: center;
 }
 
+.section-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
 /* Contenedores de entrada y botón */
 .input-wrapper {
     display: flex;
@@ -152,7 +159,7 @@ li {
 }
 
 /* Botón de sortear título */
-.button-draw {
+.button-draw, .button-reset {
     display: flex;
     align-items: center;
     width: 100%;
@@ -162,10 +169,10 @@ li {
     font-size: 16px;
 }
 
-.button-draw img {
+.button-draw img, .button-reset img {
     margin-right: 40px;
 }
 
-.button-draw:hover {
+.button-draw:hover, .button-reset:hover {
     background-color: var(--color-button-hover);
 }

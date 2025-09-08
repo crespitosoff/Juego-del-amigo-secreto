@@ -4,9 +4,15 @@ let amigos = [];
 function agregarAmigo() {
     // Validamos que el campo no esté vacío
     if (document.getElementById("amigo").value.length > 0) {
-        amigos.push(document.getElementById("amigo").value);
+        // Validamos que el nombre no esté en la lista
+        if (!amigos.includes(document.getElementById("amigo").value)) {
+            // Agregamos el nombre del amigo a la lista
+            amigos.push(document.getElementById("amigo").value);
+        } else {
+            document.getElementById("resultado").textContent = "El amigo ya está en la lista.";
+        }
     } else {
-        alert("Por favor, ingresa un nombre válido.");
+        document.getElementById("resultado").textContent = "El campo no puede estar vacío.";
     }
     document.getElementById("amigo").value = "";
     actualizarLista();
@@ -39,4 +45,14 @@ function reiniciar() {
     amigos = [];
     actualizarLista();
     document.getElementById("resultado").textContent = "";
+}
+
+// Asignamos el evento keydown al campo de entrada
+document.getElementById("amigo").addEventListener("keydown", manejarEnter);
+
+// función que maneja el evento keydown
+function manejarEnter(event) {
+    if (event.key === "Enter") {
+        agregarAmigo();
+    }
 }
